@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Ensure we are running on Raspbian
-lsb_release -a 2>/dev/null | grep Raspbian
-if [ "$?" -ne "0" ]; then
-    echo "This OS is not Raspbian. Exiting..."
-    exit 1
-fi
-
 # Determine which version of Raspbian we are running on
 VERSION=`lsb_release -c 2>/dev/null | awk '{print $2}'`
 echo "Version of Raspbian determined to be: $VERSION"
